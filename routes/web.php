@@ -57,18 +57,18 @@ Route::put('restaurant/update', 'RestaurantAPIController@update');
 Route::delete('restaurant/destroy', 'RestaurantAPIController@destroy');
 
 
-Route::get('restaurantID', 'RestaurantIDAPIController@index');
-Route::get('restaurantID/show', 'RestaurantIDAPIController@show');
-Route::post('restaurantID/store', 'RestaurantIDAPIController@store');
-Route::put('restaurantID/update', 'RestaurantIDAPIController@update');
-Route::delete('restaurantID/destroy', 'RestaurantIDAPIController@destroy');
+Route::get('post', 'PostAPIController@index');
+Route::get('post/show', 'PostAPIController@show');
+Route::post('post/store', 'PostAPIController@store');
+Route::put('post/update', 'PostAPIController@update');
+Route::delete('post/destroy', 'PostAPIController@destroy');
 
 
-Route::get('postID', 'PostIDAPIController@index');
-Route::get('postID/show', 'PostIDAPIController@show');
-Route::post('postID/store', 'PostIDAPIController@store');
-Route::put('postID/update', 'PostIDAPIController@update');
-Route::delete('postID/destroy', 'PostIDAPIController@destroy');
+Route::get('comment', 'CommentAPIController@index');
+Route::get('comment/show', 'CommentAPIController@show');
+Route::post('comment/store', 'CommentAPIController@store');
+Route::put('comment/update', 'CommentAPIController@update');
+Route::delete('comment/destroy', 'CommentAPIController@destroy');
 
 
 
