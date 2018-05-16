@@ -76,7 +76,7 @@ class RestaurantAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
       $restaurant = Restaurants::find($request['id']);
       $restaurant->update($request->all());

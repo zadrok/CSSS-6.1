@@ -10,5 +10,5 @@ class Restaurants extends Model
   public $incrementing = false;
   public $timestamps = false;
   protected $primaryKey = "id";
-  protected $fillable = ['name', 'phone', 'address_1', 'address_2', 'suburb', 'state', 'numberofseats', 'country_id', 'category_id'];
+  protected $fillable = ['name', 'phone', 'address1', 'address2', 'suburb', 'state', 'numberofseats', 'country_id', 'category_id'];
 }

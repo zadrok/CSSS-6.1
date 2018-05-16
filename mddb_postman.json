@@ -1,0 +1,1293 @@
+{
+	"info": {
+		"_postman_id": "b38eb842-25b0-407f-922a-1159328e3985",
+		"name": "melbournedining",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve all restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/restaurant",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"restaurant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.1: Create Country",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Australia",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/country/store",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"country",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.1: Update Country",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Australia",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:45:00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/country/update",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"country",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.1: Delete Country",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/country/destroy?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"country",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2: Create Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Italian",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/category/store",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"category",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2: Update Category",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Italian",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/category/update",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"category",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.2: Delete Category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/category/destroy?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"category",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},		
+		{
+			"name": "1.3: Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "LuvsItalianFood65",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "iHeartItaly@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "iluvitaly",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "country_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}					
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/user/store",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"user",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.3: Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "LuvsItalianFood65",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "iHeartItaly@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "iluvitaly",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "country_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}					
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/user/update",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.3: Delete User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/user/destroy?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"User",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},		
+		{
+			"name": "1.4: Create Role",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Customer",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/role/store",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"role",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.4: Update Role",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Customer",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/role/update",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"role",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.4: Delete Role",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/role/destroy?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"role",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},		
+		{
+			"name": "1.5: Create Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Vaporetto Bar & Eatery",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "90785492",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "681 Glenferrie Rd",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "suburb",
+							"value": "Hawthorn",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "VIC",
+							"description": "",
+							"type": "text"
+						},	
+						{
+							"key": "numberofseats",
+							"value": "80",
+							"description": "",
+							"type": "text"
+						},							
+						{
+							"key": "country_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}					
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/restaurant/store",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"restaurant",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.5: Update Restaurant",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Vaporetto Bar & Eatery",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "90785492",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address1",
+							"value": "681 Glenferrie Rd",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "address2",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "suburb",
+							"value": "Hawthorn",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "VIC",
+							"description": "",
+							"type": "text"
+						},	
+						{
+							"key": "numberofseats",
+							"value": "80",
+							"description": "",
+							"type": "text"
+						},							
+						{
+							"key": "country_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}					
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/restaurant/update",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"restaurant",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.5: Delete Restaurant",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/restaurant/destroy?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"restaurant",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},		
+		{
+			"name": "1.6: Create Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "My favourite place to go for lunch & dinner!!",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "restaurant_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}						
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/post/store",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"post",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.6: Update Post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "My favourite place to go for lunch & dinner!!",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "restaurant_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						}						
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/post/update",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"post",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.6: Delete Post",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/post/destroy?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"post",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},		
+		{
+			"name": "1.7: Create Comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content",
+							"value": "Thankyou for your kind words!",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "post_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}						
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/comment/store",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"comment",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.7: Update Comment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Thankyou for your kind words!",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "created_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "updated_at",
+							"value": "2018-05-16 16:30:00",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "post_id",
+							"value": "0",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "1",
+							"description": "",
+							"type": "text"
+						}						
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/comment/update",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"comment",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.7: Delete Comment",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/comment/destroy?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"comment",
+						"destroy"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},		
+		{
+			"name": "1.8: Retrieve restaurant by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/restaurant/show?id=6",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"restaurant",
+						"show"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.9: Retrieve restaurant by country ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/restaurant/show?country_id=1",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"restaurant",
+						"show"
+					],
+					"query": [
+						{
+							"key": "country_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.9: Retrieve restaurant by category ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost/melbournedining/public/api/restaurant/show?id=0",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"melbournedining",
+						"public",
+						"api",
+						"restaurant",
+						"show"
+					],
+					"query": [
+						{
+							"key": "category_id",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
+		
