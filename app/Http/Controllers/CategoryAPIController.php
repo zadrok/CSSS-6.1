@@ -52,7 +52,7 @@ class CategoryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
       $category = Categories::find($request['id']);
       return response()->json($category, 201);
@@ -89,7 +89,7 @@ class CategoryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
       $category = Categories::find($request['id']);
       $category->delete();

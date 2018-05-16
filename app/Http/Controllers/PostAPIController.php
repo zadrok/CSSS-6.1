@@ -55,7 +55,7 @@ class PostAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
       $restaurant = Restaurants::find($request['id']);
       $post = Posts::find($request['id']);
@@ -94,7 +94,7 @@ class PostAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
       $restaurant = Restaurants::find($request['id']);
       $post = Posts::find($request['id']);

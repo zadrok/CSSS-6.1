@@ -52,7 +52,7 @@ class CountryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
       $country = Countries::find($request['id']);
       return response()->json($country, 201);
@@ -89,7 +89,7 @@ class CountryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
       $country = Countries::find($request['id']);
       $country->delete();

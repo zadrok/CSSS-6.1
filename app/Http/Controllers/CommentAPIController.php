@@ -53,7 +53,7 @@ class CommentAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
       $comment = Comments::find($request['id']);
       return response()->json($comment, 201);
@@ -90,7 +90,7 @@ class CommentAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
       $comment = Comments::find($request['id']);
       $comment->delete();

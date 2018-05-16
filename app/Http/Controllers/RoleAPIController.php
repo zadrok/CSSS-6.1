@@ -52,7 +52,7 @@ class RoleAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
       $role = Roles::find($request['id']);
       return response()->json($role, 201);
@@ -89,7 +89,7 @@ class RoleAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
       $role = Roles::find($request['id']);
       $role->delete();

@@ -52,7 +52,7 @@ class UserAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
       $user = Users::find($request['id']);
       return response()->json($user, 201);
@@ -89,7 +89,7 @@ class UserAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
       $user = Users::find($request['id']);
       $user->delete();
