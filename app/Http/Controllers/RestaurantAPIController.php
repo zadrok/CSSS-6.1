@@ -53,9 +53,24 @@ class RestaurantAPIController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)
-    {
-      $restaurant = Restaurants::find($request['id']);
-      return response()->json($restaurant, 201);
+    {		
+		if($request->filled('id'))
+		{
+			$restaurant = Restaurants::find($request['id']);
+		}
+		else if($request->filled('country_id'))
+		{
+			$restaurant = Restaurants::where('country_id', '=', $request->input('country_id'))->get();
+		}
+		else if($request->filled('category_id'))
+		{ 
+			$restaurant = Restaurants::where('category_id', '=', $request->input('category_id'))->get();
+		}
+		else
+		{
+			$restaurant = Restaurants::find($request['id']);
+		}
+	  return response()->json($restaurant, 201);	
     }
 
     /**

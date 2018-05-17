@@ -1239,7 +1239,7 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost/melbournedining/public/api/restaurant/show?country_id=1",
+					"raw": "localhost/melbournedining/public/api/restaurant/show?id=1",
 					"host": [
 						"localhost"
 					],
