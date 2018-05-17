@@ -11,4 +11,13 @@ class Comments extends Model
   public $timestamps = true;
   protected $primaryKey = "id";
   protected $fillable = ['content', 'created_at', 'updated_at', 'post_id', 'user_id'];
+  
+  	public function post()
+	{
+		return $this->belongsTo('App\Posts', 'post_id');
+	}
+	public function users()
+	{
+		return $this->belongsTo('App\Users', 'user_id');
+	}
 }

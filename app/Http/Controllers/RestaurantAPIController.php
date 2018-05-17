@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Restaurants;
+use App\Posts;
+use App\Comments;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Carbon\Carbon;
@@ -56,7 +58,7 @@ class RestaurantAPIController extends Controller
     {		
 		if($request->filled('id'))
 		{
-			$restaurant = Restaurants::find($request['id']);
+			$restaurant = Restaurants::with('post', 'post.comments')->find($request['id']);
 		}
 		else if($request->filled('country_id'))
 		{
