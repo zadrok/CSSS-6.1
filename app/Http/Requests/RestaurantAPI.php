@@ -23,19 +23,29 @@ class RestaurantAPI extends FormRequest
      */
     public function rules()
     {
-        return [
-          'content' => 'required',
-          'post_id' => 'required|numeric',
-          'user_id' => 'required|numeric'
-        ];
-    }
-
-    public function messages()
-    {
       return [
-        'content.required' => 'Please enter a comment.',
-        'post_id.required' => 'The post is required to know where to put this',
-        'user_id.required' => 'the user is needed, to know who made the comment'
+        'name' => 'required',
+        'phone' => 'required|numeric',
+        'address_1' => 'required',
+        'suburb' => 'required',
+        'state' => 'required',
+        'numberofseats' => 'required|numeric',
+        'country_id' => 'required|numeric',
+        'category_id' => 'required|numeric'
       ];
+  }
+
+  public function messages()
+  {
+    return [
+      'name.required' => 'Please enter a name.',
+      'phone.required' => 'Please enter a phone number',
+      'address_1.required' => 'Please enter an address',
+      'suburb.required' => 'Please enter a suburb',
+      'state.required' => 'Please enter a state',
+      'numberofseats.required' => 'Please enter the number of seats',
+      'country_id.required' => 'the country is needed, to know where the Restaurant is',
+      'category_id.required' => 'the category is needed, to know what the Restaurant serves',
+    ];
     }
 }

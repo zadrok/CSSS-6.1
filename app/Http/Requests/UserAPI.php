@@ -24,18 +24,18 @@ class UserAPI extends FormRequest
     public function rules()
     {
         return [
-          'content' => 'required',
-          'post_id' => 'required|numeric',
-          'user_id' => 'required|numeric'
+          'name' => 'required',
+          'email' => 'required',
+          'country_id' => 'required|numeric'
         ];
     }
 
     public function messages()
     {
       return [
-        'content.required' => 'Please enter a comment.',
-        'post_id.required' => 'The post is required to know where to put this',
-        'user_id.required' => 'the user is needed, to know who made the comment'
+        'name.required' => 'Please enter a name.',
+        'email.required' => 'Please provide an email for this user',
+        'country_id.required' => 'Please provide this users country_id'
       ];
     }
 }

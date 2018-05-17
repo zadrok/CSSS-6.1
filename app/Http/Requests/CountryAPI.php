@@ -24,18 +24,14 @@ class CountryAPI extends FormRequest
     public function rules()
     {
         return [
-          'content' => 'required',
-          'post_id' => 'required|numeric',
-          'user_id' => 'required|numeric'
+          'name' => 'required'
         ];
     }
 
     public function messages()
     {
       return [
-        'content.required' => 'Please enter a comment.',
-        'post_id.required' => 'The post is required to know where to put this',
-        'user_id.required' => 'the user is needed, to know who made the comment'
+        'name.required' => 'Please give a name to this Country.'
       ];
     }
 }
