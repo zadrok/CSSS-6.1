@@ -30,9 +30,11 @@ class UserAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-      return Users::create($request->all());
+      $validated = $request->validated();
+      $user = Users::create($request->all());
+      return response()->json($user, 201);
     }
 
     /**
@@ -57,7 +59,7 @@ class UserAPIController extends Controller
     public function show(Request $request)
     {
       $user = Users::find($request['id']);
-      return response()->json($user, 201);
+      return response()->json($user, 200);
     }
 
     /**

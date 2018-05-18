@@ -32,9 +32,11 @@ class RestaurantAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-      return Restaurants::create($request->all());
+      $validated = $request->validated();
+      $restaurant = Restaurants::create($request->all());
+      return response()->json($restaurant, 201);
     }
 
     /**
@@ -74,7 +76,7 @@ class RestaurantAPIController extends Controller
 		{
 			$restaurant = Restaurants::find($request['id']);
 		}
-	  return response()->json($restaurant, 201);
+	  return response()->json($restaurant, 200);
     }
 
     /**

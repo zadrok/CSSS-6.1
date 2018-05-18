@@ -30,9 +30,11 @@ class RoleAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-      return Roles::create($request->all());
+      $validated = $request->validated();
+      $role = Roles::create($request->all());
+      return response()->json($role, 201);
     }
 
     /**
@@ -57,7 +59,7 @@ class RoleAPIController extends Controller
     public function show(Request $request)
     {
       $role = Roles::find($request['id']);
-      return response()->json($role, 201);
+      return response()->json($role, 200);
     }
 
     /**

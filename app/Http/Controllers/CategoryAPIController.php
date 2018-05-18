@@ -30,9 +30,11 @@ class CategoryAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-      return Categories::create($request->all());
+      $validated = $request->validated();
+      $category = Categories::create($request->all());
+      return response()->json($category, 201);
     }
 
     /**
@@ -57,7 +59,7 @@ class CategoryAPIController extends Controller
     public function show(Request $request)
     {
       $category = Categories::find($request['id']);
-      return response()->json($category, 201);
+      return response()->json($category, 200);
     }
 
     /**

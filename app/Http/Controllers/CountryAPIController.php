@@ -30,9 +30,11 @@ class CountryAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-      return Countries::create($request->all());
+      $validated = $request->validated();
+      $country = Countries::create($request->all());
+      return response()->json($country, 201);
     }
 
     /**
@@ -57,7 +59,7 @@ class CountryAPIController extends Controller
     public function show(Request $request)
     {
       $country = Countries::find($request['id']);
-      return response()->json($country, 201);
+      return response()->json($country, 200);
     }
 
     /**

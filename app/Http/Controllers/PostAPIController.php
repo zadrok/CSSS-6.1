@@ -31,10 +31,12 @@ class PostAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+      $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
-      return Posts::create($request->all());
+      $post = Posts::create($request->all());
+      return response()->json($post, 201);
     }
 
     /**
@@ -61,7 +63,7 @@ class PostAPIController extends Controller
     {
       $restaurant = Restaurants::find($request['id']);
       $post = Posts::find($request['id']);
-      return response()->json($post, 201);
+      return response()->json($post, 200);
     }
 
     /**

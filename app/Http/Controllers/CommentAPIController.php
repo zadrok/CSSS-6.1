@@ -31,9 +31,11 @@ class CommentAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-      return Comments::create($request->all());
+      $validated = $request->validated();
+      $comment = Comments::create($request->all());
+      return response()->json($comment, 201);
     }
 
     /**
@@ -58,7 +60,7 @@ class CommentAPIController extends Controller
     public function show(Request $request)
     {
       $comment = Comments::find($request['id']);
-      return response()->json($comment, 201);
+      return response()->json($comment, 200);
     }
 
     /**
