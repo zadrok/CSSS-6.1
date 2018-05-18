@@ -11,6 +11,7 @@ use Validator;
 use Input;
 use Session;
 use Redirect;
+use App\Http\Requests\CategoryAPI;
 
 class CategoryAPIController extends Controller
 {
@@ -42,6 +43,7 @@ class CategoryAPIController extends Controller
      */
     public function store(Request $request)
     {
+      $validated = $request->validated();
       $category = Categories::create($request->all());
       return response()->json($category, 201);
     }
@@ -78,6 +80,7 @@ class CategoryAPIController extends Controller
      */
     public function update(Request $request)
     {
+      $validated = $request->validated();
       $category = Categories::find($request['id']);
       $category->update($request->all());
       return response()->json($category, 200);
