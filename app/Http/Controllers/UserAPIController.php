@@ -11,6 +11,7 @@ use Validator;
 use Input;
 use Session;
 use Redirect;
+use App\Http\Requests\UserAPI;
 
 class UserAPIController extends Controller
 {
@@ -42,6 +43,7 @@ class UserAPIController extends Controller
      */
     public function store(Request $request)
     {
+      $validated = $request->validated();
       $user = Users::create($request->all());
       return response()->json($user, 201);
     }
@@ -78,6 +80,7 @@ class UserAPIController extends Controller
      */
     public function update(Request $request)
     {
+      $validated = $request->validated();
       $user = Users::find($request['id']);
       $user->update($request->all());
       return response()->json($user, 200);

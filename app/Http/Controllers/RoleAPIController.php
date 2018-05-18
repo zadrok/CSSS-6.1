@@ -11,6 +11,7 @@ use Validator;
 use Input;
 use Session;
 use Redirect;
+use App\Http\Requests\RoleAPI;
 
 class RoleAPIController extends Controller
 {
@@ -42,6 +43,7 @@ class RoleAPIController extends Controller
      */
     public function store(Request $request)
     {
+      $validated = $request->validated();
       $role = Roles::create($request->all());
       return response()->json($role, 201);
     }
@@ -78,6 +80,7 @@ class RoleAPIController extends Controller
      */
     public function update(Request $request)
     {
+      $validated = $request->validated();
       $role = Roles::find($request['id']);
       $role->update($request->all());
       return response()->json($role, 200);

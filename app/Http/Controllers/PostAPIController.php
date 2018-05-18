@@ -12,6 +12,7 @@ use Validator;
 use Input;
 use Session;
 use Redirect;
+use App\Http\Requests\PostAPI;
 
 class PostAPIController extends Controller
 {
@@ -44,6 +45,7 @@ class PostAPIController extends Controller
      */
     public function store(Request $request)
     {
+      $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
       $post = Posts::create($request->all());
       return response()->json($post, 201);
@@ -82,6 +84,7 @@ class PostAPIController extends Controller
      */
     public function update(Request $request)
     {
+      $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
       $post = Posts::find($request['id']);
       $post->update($request->all());

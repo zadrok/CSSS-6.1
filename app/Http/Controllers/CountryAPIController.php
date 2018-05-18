@@ -11,6 +11,7 @@ use Validator;
 use Input;
 use Session;
 use Redirect;
+use App\Http\Requests\CountryAPI;
 
 class CountryAPIController extends Controller
 {
@@ -42,6 +43,7 @@ class CountryAPIController extends Controller
      */
     public function store(Request $request)
     {
+      $validated = $request->validated();
       $country = Countries::create($request->all());
       return response()->json($country, 201);
     }
@@ -78,6 +80,7 @@ class CountryAPIController extends Controller
      */
     public function update(Request $request)
     {
+      $validated = $request->validated();
       $country = Countries::find($request['id']);
       $country->update($request->all());
       return response()->json($country, 200);

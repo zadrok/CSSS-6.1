@@ -13,6 +13,7 @@ use Validator;
 use Input;
 use Session;
 use Redirect;
+use App\Http\Requests\RestaurantAPI;
 
 class RestaurantAPIController extends Controller
 {
@@ -44,6 +45,7 @@ class RestaurantAPIController extends Controller
      */
     public function store(Request $request)
     {
+      $validated = $request->validated();
       $restaurant = Restaurants::create($request->all());
       return response()->json($restaurant, 201);
     }
@@ -55,7 +57,7 @@ class RestaurantAPIController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)
-    {		
+    {
 		if($request->filled('id'))
 		{
 			$restaurant = Restaurants::with('post', 'post.comments')->find($request['id']);
@@ -65,14 +67,14 @@ class RestaurantAPIController extends Controller
 			$restaurant = Restaurants::where('country_id', '=', $request->input('country_id'))->get();
 		}
 		else if($request->filled('category_id'))
-		{ 
+		{
 			$restaurant = Restaurants::where('category_id', '=', $request->input('category_id'))->get();
 		}
 		else
 		{
 			$restaurant = Restaurants::find($request['id']);
 		}
-	  return response()->json($restaurant, 201);	
+	  return response()->json($restaurant, 201);
     }
 
     /**
@@ -95,6 +97,7 @@ class RestaurantAPIController extends Controller
      */
     public function update(Request $request)
     {
+      $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
       $restaurant->update($request->all());
       return response()->json($restaurant, 200);

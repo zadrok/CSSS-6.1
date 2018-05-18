@@ -12,6 +12,7 @@ use Validator;
 use Input;
 use Session;
 use Redirect;
+use App\Http\Requests\CommentAPI;
 
 class CommentAPIController extends Controller
 {
@@ -43,6 +44,7 @@ class CommentAPIController extends Controller
      */
     public function store(Request $request)
     {
+      $validated = $request->validated();
       $comment = Comments::create($request->all());
       return response()->json($comment, 201);
     }
@@ -79,6 +81,7 @@ class CommentAPIController extends Controller
      */
     public function update(Request $request)
     {
+      $validated = $request->validated();
       $comment = Comments::find($request['id']);
       $comment->update($request->all());
       return response()->json($comment, 200);
