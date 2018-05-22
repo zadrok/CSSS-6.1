@@ -28,7 +28,7 @@ class RestaurantAPI extends FormRequest
         'phone' => 'required|numeric',
         'address1' => 'required',
         'suburb' => 'required',
-        'state' => 'required',
+        'state' => 'required|max:3',
         'numberofseats' => 'required|numeric',
         'country_id' => 'required|numeric',
         'category_id' => 'required|numeric'
@@ -43,6 +43,7 @@ class RestaurantAPI extends FormRequest
       'address1.required' => 'Please enter an address',
       'suburb.required' => 'Please enter a suburb',
       'state.required' => 'Please enter a state',
+	  'state.max' => 'Please use 3-letter format for state (eg. VIC)',
       'numberofseats.required' => 'Please enter the number of seats',
       'country_id.required' => 'the country is needed, to know where the Restaurant is',
       'category_id.required' => 'the category is needed, to know what the Restaurant serves',
