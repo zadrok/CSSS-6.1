@@ -96,7 +96,7 @@ class CountryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CountryAPI $request)
+    public function destroy(Request $request)
     {
       $country = Countries::find($request['id']);
       $country->delete();

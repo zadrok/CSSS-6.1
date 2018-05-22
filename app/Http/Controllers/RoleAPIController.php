@@ -95,7 +95,7 @@ class RoleAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RoleAPI $request)
+    public function destroy(Request $request)
     {
       $role = Roles::find($request['id']);
       $role->delete();

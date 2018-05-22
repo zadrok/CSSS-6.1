@@ -95,7 +95,7 @@ class CategoryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoryAPI $request)
+    public function destroy(Request $request)
     {
       $category = Categories::find($request['id']);
       $category->delete();

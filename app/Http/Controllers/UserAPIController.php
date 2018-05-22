@@ -95,7 +95,7 @@ class UserAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserAPI $request)
+    public function destroy(Request $request)
     {
       $user = Users::find($request['id']);
       $user->delete();
