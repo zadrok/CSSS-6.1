@@ -14,6 +14,7 @@ use Input;
 use Session;
 use Redirect;
 use App\Http\Requests\RestaurantAPI;
+use App\Http\Controllers\Controller;
 
 class RestaurantAPIController extends Controller
 {

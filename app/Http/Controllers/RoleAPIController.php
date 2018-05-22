@@ -12,6 +12,7 @@ use Input;
 use Session;
 use Redirect;
 use App\Http\Requests\RoleAPI;
+use App\Http\Controllers\Controller;
 
 class RoleAPIController extends Controller
 {
@@ -30,7 +31,7 @@ class RoleAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(RoleAPI $request)
     {
       $validated = $request->validated();
       $role = Roles::create($request->all());
@@ -43,7 +44,7 @@ class RoleAPIController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleAPI $request)
     {
       $validated = $request->validated();
       $role = Roles::create($request->all());
@@ -56,7 +57,7 @@ class RoleAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(RoleAPI $request)
     {
       $role = Roles::find($request['id']);
       return response()->json($role, 200);
@@ -80,7 +81,7 @@ class RoleAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(RoleAPI $request)
     {
       $validated = $request->validated();
       $role = Roles::find($request['id']);
@@ -94,7 +95,7 @@ class RoleAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(RoleAPI $request)
     {
       $role = Roles::find($request['id']);
       $role->delete();

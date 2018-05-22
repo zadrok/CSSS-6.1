@@ -13,6 +13,7 @@ use Input;
 use Session;
 use Redirect;
 use App\Http\Requests\CommentAPI;
+use App\Http\Controllers\Controller;
 
 class CommentAPIController extends Controller
 {
@@ -31,7 +32,7 @@ class CommentAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(CommentAPI $request)
     {
       $validated = $request->validated();
       $comment = Comments::create($request->all());
@@ -44,7 +45,7 @@ class CommentAPIController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CommentAPI $request)
     {
       $validated = $request->validated();
       $comment = Comments::create($request->all());
@@ -57,7 +58,7 @@ class CommentAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(CommentAPI $request)
     {
       $comment = Comments::find($request['id']);
       return response()->json($comment, 200);
@@ -81,7 +82,7 @@ class CommentAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(CommentAPI $request)
     {
       $validated = $request->validated();
       $comment = Comments::find($request['id']);
@@ -95,7 +96,7 @@ class CommentAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(CommentAPI $request)
     {
       $comment = Comments::find($request['id']);
       $comment->delete();

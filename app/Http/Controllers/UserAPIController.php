@@ -12,6 +12,7 @@ use Input;
 use Session;
 use Redirect;
 use App\Http\Requests\UserAPI;
+use App\Http\Controllers\Controller;
 
 class UserAPIController extends Controller
 {
@@ -30,7 +31,7 @@ class UserAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(UserAPI $request)
     {
       $validated = $request->validated();
       $user = Users::create($request->all());
@@ -43,7 +44,7 @@ class UserAPIController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserAPI $request)
     {
       $validated = $request->validated();
       $user = Users::create($request->all());
@@ -56,7 +57,7 @@ class UserAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(UserAPI $request)
     {
       $user = Users::find($request['id']);
       return response()->json($user, 200);
@@ -80,7 +81,7 @@ class UserAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(UserAPI $request)
     {
       $validated = $request->validated();
       $user = Users::find($request['id']);
@@ -94,7 +95,7 @@ class UserAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(UserAPI $request)
     {
       $user = Users::find($request['id']);
       $user->delete();

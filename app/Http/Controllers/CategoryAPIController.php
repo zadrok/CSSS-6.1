@@ -12,6 +12,7 @@ use Input;
 use Session;
 use Redirect;
 use App\Http\Requests\CategoryAPI;
+use App\Http\Controllers\Controller;
 
 class CategoryAPIController extends Controller
 {
@@ -30,7 +31,7 @@ class CategoryAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(CategoryAPI $request)
     {
       $validated = $request->validated();
       $category = Categories::create($request->all());
@@ -43,7 +44,7 @@ class CategoryAPIController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryAPI $request)
     {
       $validated = $request->validated();
       $category = Categories::create($request->all());
@@ -56,7 +57,7 @@ class CategoryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(CategoryAPI $request)
     {
       $category = Categories::find($request['id']);
       return response()->json($category, 200);
@@ -80,7 +81,7 @@ class CategoryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(CategoryAPI $request)
     {
       $validated = $request->validated();
       $category = Categories::find($request['id']);
@@ -94,7 +95,7 @@ class CategoryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(CategoryAPI $request)
     {
       $category = Categories::find($request['id']);
       $category->delete();

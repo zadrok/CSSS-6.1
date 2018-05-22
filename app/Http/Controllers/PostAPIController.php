@@ -13,6 +13,7 @@ use Input;
 use Session;
 use Redirect;
 use App\Http\Requests\PostAPI;
+use App\Http\Controllers\Controller;
 
 class PostAPIController extends Controller
 {
@@ -31,7 +32,7 @@ class PostAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(PostAPI $request)
     {
       $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
@@ -45,7 +46,7 @@ class PostAPIController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostAPI $request)
     {
       $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
@@ -59,7 +60,7 @@ class PostAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(PostAPI $request)
     {
       $restaurant = Restaurants::find($request['id']);
       $post = Posts::find($request['id']);
@@ -84,7 +85,7 @@ class PostAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(PostAPI $request)
     {
       $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
@@ -99,7 +100,7 @@ class PostAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(PostAPI $request)
     {
       $restaurant = Restaurants::find($request['id']);
       $post = Posts::find($request['id']);
