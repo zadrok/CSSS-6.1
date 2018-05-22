@@ -47,12 +47,7 @@ class CountryAPIController extends Controller
      */
     public function store(CountryAPI $request)
     {
-      // $validated = $request->validated();
-
-      if (isset($request->validator) && $request->validator->fails()) {
-        return response()->json($request->validator->messages(), 400);
-      }
-
+      $validated = $request->validated();
       $country = Countries::create($request->all());
       return response()->json($country, 201);
     }

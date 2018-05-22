@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CountryAPI extends FormRequest
 {
+    protected $redirectAction = response();
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -33,5 +34,9 @@ class CountryAPI extends FormRequest
       return [
         'name.required' => 'Please give a name to this Country.'
       ];
+    }
+
+    Public function response(array $errors) {
+      return response()->json(['errors' => $this->$errorBag], 500);
     }
 }
