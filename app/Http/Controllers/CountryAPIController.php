@@ -12,6 +12,8 @@ use Input;
 use Session;
 use Redirect;
 use App\Http\Requests\CountryAPI;
+use App\Http\Controllers\Controller;
+
 
 class CountryAPIController extends Controller
 {
@@ -30,7 +32,7 @@ class CountryAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(CountryAPI $request)
     {
       $validated = $request->validated();
       $country = Countries::create($request->all());
@@ -43,9 +45,14 @@ class CountryAPIController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CountryAPI $request)
     {
-      $validated = $request->validated();
+      // $validated = $request->validated();
+
+      if (isset($request->validator) && $request->validator->fails()) {
+        return response()->json($request->validator->messages(), 400);
+      }
+
       $country = Countries::create($request->all());
       return response()->json($country, 201);
     }
@@ -56,7 +63,7 @@ class CountryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(CountryAPI $request)
     {
       $country = Countries::find($request['id']);
       return response()->json($country, 200);
@@ -80,7 +87,7 @@ class CountryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(CountryAPI $request)
     {
       $validated = $request->validated();
       $country = Countries::find($request['id']);
@@ -94,7 +101,7 @@ class CountryAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(CountryAPI $request)
     {
       $country = Countries::find($request['id']);
       $country->delete();

@@ -32,7 +32,7 @@ class RestaurantAPIController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(RestaurantAPI $request)
     {
       $validated = $request->validated();
       $restaurant = Restaurants::create($request->all());
@@ -45,7 +45,7 @@ class RestaurantAPIController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RestaurantAPI $request)
     {
       $validated = $request->validated();
       $restaurant = Restaurants::create($request->all());
@@ -58,7 +58,7 @@ class RestaurantAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(RestaurantAPI $request)
     {
 		if($request->filled('id'))
 		{
@@ -97,7 +97,7 @@ class RestaurantAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(RestaurantAPI $request)
     {
       $validated = $request->validated();
       $restaurant = Restaurants::find($request['id']);
@@ -111,7 +111,7 @@ class RestaurantAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(RestaurantAPI $request)
     {
       $restaurant = Restaurants::find($request['id']);
       $restaurant->delete();
