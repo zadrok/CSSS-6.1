@@ -59,7 +59,7 @@ class RestaurantAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(RestaurantAPI $request)
+    public function show(Request $request)
     {
 		if($request->filled('id'))
 		{
@@ -112,7 +112,7 @@ class RestaurantAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RestaurantAPI $request)
+    public function destroy(Request $request)
     {
       $restaurant = Restaurants::find($request['id']);
       $restaurant->delete();

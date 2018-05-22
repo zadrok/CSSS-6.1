@@ -26,7 +26,7 @@ class RestaurantAPI extends FormRequest
       return [
         'name' => 'required',
         'phone' => 'required|numeric',
-        'address_1' => 'required',
+        'address1' => 'required',
         'suburb' => 'required',
         'state' => 'required',
         'numberofseats' => 'required|numeric',
@@ -40,7 +40,7 @@ class RestaurantAPI extends FormRequest
     return [
       'name.required' => 'Please enter a name.',
       'phone.required' => 'Please enter a phone number',
-      'address_1.required' => 'Please enter an address',
+      'address1.required' => 'Please enter an address',
       'suburb.required' => 'Please enter a suburb',
       'state.required' => 'Please enter a state',
       'numberofseats.required' => 'Please enter the number of seats',

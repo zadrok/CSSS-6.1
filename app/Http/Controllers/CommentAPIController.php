@@ -96,7 +96,7 @@ class CommentAPIController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CommentAPI $request)
+    public function destroy(Request $request)
     {
       $comment = Comments::find($request['id']);
       $comment->delete();
